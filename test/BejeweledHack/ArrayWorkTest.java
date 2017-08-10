@@ -6,7 +6,7 @@ package BejeweledHack;
 
 import BejeweledBlitzBot.Colour;
 import BejeweledBlitzBot.Jewel;
-import BejeweledBlitzBot.ArrayWork;
+import BejeweledBlitzBot.StaticMethods;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
 public class ArrayWorkTest {
 
     Jewel[][] matrix = new Jewel[8][8];
-    ArrayWork arrayWork = new ArrayWork();
+    StaticMethods arrayWork = new StaticMethods();
 
     public ArrayWorkTest() {
     }
@@ -53,7 +53,7 @@ public class ArrayWorkTest {
     }
 
     /**
-     * Test of findMove method, of class ArrayWork.
+     * Test of findMove method, of class StaticMethods.
      */
     @Test
     public void testFindMove() throws Exception {

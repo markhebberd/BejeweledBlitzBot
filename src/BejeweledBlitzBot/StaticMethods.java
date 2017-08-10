@@ -7,14 +7,13 @@ import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 
-public class ArrayWork {
+public class StaticMethods {
 
     private static int basex = 0;
     private static int basey = 0;
 
-    public int[] findBase() throws AWTException {
-
-        
+    static public int[] findBase() throws AWTException {
+  
         Robot robot = new Robot();
         Rectangle rectangle = new Rectangle(2000, 2000);
         //Capture are of screen for analysis
@@ -47,11 +46,11 @@ public class ArrayWork {
                 }
             }
         }
-        int baseNoFound[] = {0, 0};
-        return baseNoFound;
+        int baseNotFound[] = {0, 0};
+        return baseNotFound;
     }
 
-    public void clickPlayNowButton() throws AWTException, InterruptedException {
+    static public void clickPlayNowButton() throws AWTException, InterruptedException {
         Robot robot = new Robot();
         robot.mouseMove(basex + 80, basey + 285);
         robot.mousePress(InputEvent.BUTTON1_MASK);
@@ -59,7 +58,7 @@ public class ArrayWork {
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
     }
 
-    public Jewel[][] buildArray() throws Exception {
+    static public Jewel[][] buildArray() throws Exception {
 
         Robot robot = new Robot();
         int[] powerDifference = {0, 5};
@@ -495,7 +494,7 @@ public class ArrayWork {
             return matrix;
         }
 
-    public int[] findMove(Jewel[][] matrix) throws Exception {
+    static public int[] findMove(Jewel[][] matrix) throws Exception {
         int[] toMove = new int[4];
         // records highest found move score. 
         int highestMoveRating = 0;
@@ -849,7 +848,7 @@ public class ArrayWork {
         return toMove;
     }
 
-    public void mouseclick(int[] toMove) throws Exception {
+    static public void mouseclick(int[] toMove) throws Exception {
         Robot robot = new Robot();
 
         int rowInitial = toMove[0];
@@ -865,27 +864,5 @@ public class ArrayWork {
         robot.mouseMove(basex + 40 * colFinal, basey + 40 * rowFinal);
         Thread.sleep(lazy);
         robot.mouseRelease(InputEvent.BUTTON1_MASK);
-    }
-
-    public void textDisplayJewel(Jewel[][] matrix) {
-        System.out.println(" Column       1        2        3        4        5        6        7        8");
-        System.out.println();
-        for (int i = 0; i < 8; i++) {
-            System.out.print("Row  (" + (i + 1) + ")");
-            for (int j = 0; j < 8; j++) {
-                //evening out textDisplayJewel.
-                for (int g = matrix[i][j].enumColour.getStringRepresentation().length(); g < 8; g++) {
-                    System.out.print(" ");
-                }
-
-                if (matrix[i][j] != null) {
-                    System.out.print(matrix[i][j].enumColour.getStringRepresentation() + " ");
-                }
-
-            }
-            System.out.println();
-            System.out.println();
-        }
-
     }
 }

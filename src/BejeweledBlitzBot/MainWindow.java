@@ -13,7 +13,6 @@ import javax.swing.SwingWorker;
  */
 public class MainWindow extends javax.swing.JFrame {
 
-    ArrayWork arrayWork = new ArrayWork();
     private long runTime = 10000;
     BaseNotFoundFrame bnff = new BaseNotFoundFrame();
 
@@ -339,16 +338,16 @@ public class MainWindow extends javax.swing.JFrame {
             //runs intensive screen/array checking 
             protected Void doInBackground() throws Exception {
 
-                int baseLocation[] = arrayWork.findBase();
+                int baseLocation[] = StaticMethods.findBase();
                 if (baseLocation[0] != 0 && baseLocation[1] != 0) {
-                    arrayWork.clickPlayNowButton();
+                    StaticMethods.clickPlayNowButton();
                     long startTime = System.currentTimeMillis();
                     while (startTime + runTime > System.currentTimeMillis()) {
-                        Jewel matrixOfJewels[][] = arrayWork.buildArray();
+                        Jewel matrixOfJewels[][] = StaticMethods.buildArray();
                         publish(matrixOfJewels);
-                        int[] toMove = arrayWork.findMove(matrixOfJewels);
+                        int[] toMove = StaticMethods.findMove(matrixOfJewels);
                         if (toMove[0] + toMove[1] + toMove[2] + toMove[3] != 0) {
-                            arrayWork.mouseclick(toMove);
+                            StaticMethods.mouseclick(toMove);
                         }
                     }
                 } else {
