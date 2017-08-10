@@ -14,6 +14,7 @@ public class ArrayWork {
 
     public int[] findBase() throws AWTException {
 
+        
         Robot robot = new Robot();
         Rectangle rectangle = new Rectangle(2000, 2000);
         //Capture are of screen for analysis
