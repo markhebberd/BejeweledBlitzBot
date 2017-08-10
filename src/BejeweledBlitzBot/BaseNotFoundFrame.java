@@ -4,6 +4,8 @@
  */
 package BejeweledBlitzBot;
 
+import javax.swing.JDialog;
+
 /**
  *
  * @author Mark
@@ -31,6 +33,7 @@ public class BaseNotFoundFrame extends javax.swing.JFrame {
         notVisibleLine1 = new javax.swing.JLabel();
         notVisibleLine2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButtonOK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -41,6 +44,13 @@ public class BaseNotFoundFrame extends javax.swing.JFrame {
         notVisibleLine2.setText("that your browser text size is set to \"normal\" or 100%");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BejeweledBlitzBot/BejeweledStartScreen.PNG"))); // NOI18N
+
+        jButtonOK.setText("OK");
+        jButtonOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOKActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,7 +66,10 @@ public class BaseNotFoundFrame extends javax.swing.JFrame {
                         .addComponent(notVisibleLine2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addComponent(jButtonOK)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -68,11 +81,17 @@ public class BaseNotFoundFrame extends javax.swing.JFrame {
                 .addComponent(notVisibleLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1)
+                .addGap(10, 10, 10)
+                .addComponent(jButtonOK)
                 .addGap(10, 10, 10))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOKActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonOKActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,6 +134,7 @@ public class BaseNotFoundFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonOK;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel notVisibleLine1;
     private javax.swing.JLabel notVisibleLine2;

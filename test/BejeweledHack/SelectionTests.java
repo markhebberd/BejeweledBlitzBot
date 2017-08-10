@@ -18,12 +18,12 @@ import static org.junit.Assert.*;
  *
  * @author Mark
  */
-public class ArrayWorkTest {
+public class SelectionTests {
 
     Jewel[][] matrix = new Jewel[8][8];
     StaticMethods arrayWork = new StaticMethods();
 
-    public ArrayWorkTest() {
+    public SelectionTests() {
     }
 
     @BeforeClass
